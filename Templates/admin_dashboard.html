@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <ul>
+        {% for sensor in sensors %}
+        <li>{{ sensor.name }} - {{ sensor.moisture_level }}%</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add New Sensor</h2>
+    <form method="POST" action="/admin/add_sensor">
+        <input type="text" name="name" placeholder="Sensor Name" required>
+        <button type="submit">Add Sensor</button>
+    </form>
+</body>
+</html>
